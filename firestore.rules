@@ -1,0 +1,53 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function isDocOwner() {
+      return isAuthenticated() && request.auth.uid == resource.data.uid;
+    }
+
+    function isValidUser(data) {
+      return data.uid == request.auth.uid;
+    }
+
+    function hasRequiredUserFields(data) {
+      return data.keys().hasAll(['uid', 'email']);
+    }
+
+    function isValidUpload(data) {
+      return data.userId == request.auth.uid;
+    }
+
+    function hasRequiredUploadFields(data) {
+      return data.keys().hasAll(['userId', 'title', 'status', 'timestamp', 'platforms']);
+    }
+
+    // ===============================================================
+    // Rules
+    // ===============================================================
+
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId) && hasRequiredUserFields(request.resource.data) && isValidUser(request.resource.data);
+      allow update: if isOwner(userId) && isValidUser(request.resource.data);
+    }
+
+    match /uploads/{uploadId} {
+      allow read: if isAuthenticated() && (resource == null || resource.data.userId == request.auth.uid);
+      allow create: if isAuthenticated() && hasRequiredUploadFields(request.resource.data) && isValidUpload(request.resource.data);
+      allow update: if isAuthenticated() && resource.data.userId == request.auth.uid && isValidUpload(request.resource.data);
+      allow delete: if isAuthenticated() && resource.data.userId == request.auth.uid;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile and connected social account tokens",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Firebase Auth UID" },
+        "email": { "type": "string", "description": "User email" },
+        "displayName": { "type": "string", "description": "User display name" },
+        "photoURL": { "type": "string", "description": "User photo URL" },
+        "tokens": {
+          "type": "object",
+          "description": "Stored OAuth tokens for social platforms",
+          "properties": {
+            "youtube": { "type": "object" },
+            "instagram": { "type": "object" },
+            "facebook": { "type": "object" }
+          }
+        },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Upload": {
+      "title": "Upload",
+      "description": "Record of a video upload attempt",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "Owner UID" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "success", "error"] },
+        "platforms": { "type": "array", "items": { "type": "string" } },
+        "results": { "type": "array", "items": { "type": "object" } },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "title", "status", "timestamp", "platforms"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User private data and tokens"
+    },
+    "/uploads/{uploadId}": {
+      "schema": "Upload",
+      "description": "Upload history records"
+    }
+  }
+}
