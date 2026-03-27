@@ -1,0 +1,150 @@
+977:      <div className="flex flex-col items-center justify-center min-h-screen bg-slate-50">
+994:      <div className="flex flex-col items-center justify-center min-h-screen bg-slate-50 p-4">
+1000:          <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-indigo-200">
+1019:    <div className="flex min-h-screen bg-slate-50">
+1030:            <div className="flex-1">
+1047:            <div className="flex-1">
+1060:        <div className="p-6 flex items-center gap-3">
+1061:          <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-100">
+1088:        <div className="p-4 border-t border-slate-100">
+1089:          <div className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl mb-3">
+1093:            <div className="flex-1 overflow-hidden">
+1111:          <div>
+1128:          <div className="space-y-8">
+1129:            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+1135:                <div key={i} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+1136:                  <div className="flex items-center gap-4">
+1137:                    <div className={`${stat.color} p-3 rounded-xl text-white shadow-lg`}>
+1140:                    <div>
+1149:            <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+1150:              <div className="p-6 border-b border-slate-50 flex justify-between items-center">
+1153:                  <div className="flex items-center gap-2">
+1155:                      <div className="flex items-center gap-2 animate-in fade-in slide-in-from-right-2 duration-200">
+1184:              <div className="divide-y divide-slate-50">
+1186:                  <div className="p-12 text-center">
+1192:                    <div key={item.id} className="p-6 flex items-center justify-between hover:bg-slate-50 transition-colors">
+1193:                      <div className="flex items-center gap-4">
+1194:                        <div className={`p-2 rounded-lg ${item.status === 'success' ? 'bg-emerald-50 text-emerald-600' : item.status === 'pending' ? 'bg-amber-50 text-amber-600' : 'bg-red-50 text-red-600'}`}>
+1197:                        <div>
+1202:                      <div className="flex flex-col items-end gap-2">
+1203:                        <div className="flex gap-2">
+1206:                              <div 
+1221:                              <div key={p} className="p-1.5 bg-slate-100 rounded-md text-slate-600 border border-slate-200">
+1255:          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+1266:                <div key={platform.name} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col">
+1267:                  <div className="flex items-center justify-between mb-6">
+1268:                    <div className={`${platform.bg} ${platform.color} p-3 rounded-xl`}>
+1271:                    <div className={`px-3 py-1 rounded-full text-xs font-bold ${isConnected ? 'bg-emerald-50 text-emerald-600' : 'bg-slate-100 text-slate-500'}`}>
+1277:                  <div className="flex-1">
+1279:                      <div className="bg-slate-50 rounded-xl p-3 mb-6 border border-slate-100">
+1281:                          <div className="flex items-center gap-3">
+1285:                            <div className="overflow-hidden">
+1293:                          <div className="flex items-center gap-3">
+1297:                            <div className="overflow-hidden">
+1305:                          <div className="space-y-2">
+1308:                              <div key={page.id} className="flex items-center gap-2">
+1309:                                <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+1318:                          <div className="space-y-2">
+1319:                            <div className="flex items-center justify-between">
+1333:                                  <div key={ig.id} className="flex items-center justify-between gap-2">
+1334:                                    <div className="flex items-center gap-2 overflow-hidden">
+1335:                                      <div className="w-1.5 h-1.5 rounded-full bg-pink-500 shrink-0" />
+1348:                              <div className="bg-amber-50 p-3 rounded-xl border border-amber-100 space-y-2">
+1352:                                <div className="space-y-1.5">
+1367:                                  <div className="pt-2 border-t border-amber-200 mt-2 space-y-2">
+1369:                                    <div className="space-y-1.5">
+1371:                                        <div key={p.id} className="bg-amber-100/50 p-1.5 rounded border border-amber-200/50">
+1387:                              <div className="mt-4 p-3 bg-slate-50 rounded-xl border border-slate-100">
+1389:                                <div className="flex flex-wrap gap-1">
+1410:                  <div className="flex gap-2">
+1440:          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+1454:              <div className="p-8">
+1455:                <div className="flex justify-between items-center mb-6">
+1466:                <div className="mb-6">
+1470:                  <div className="space-y-3">
+1473:                        <div className="flex items-center gap-3">
+1494:                <div className="bg-amber-50 border border-amber-100 rounded-2xl p-4 mb-8">
+1495:                  <div className="flex gap-3">
+1503:                <div className="flex gap-3">
+1534:          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+1548:              <div className="p-6 border-b border-slate-100 flex justify-between items-center shrink-0">
+1561:                <div className="p-8 flex-1 overflow-y-auto">
+1562:                  <div className="space-y-6">
+1563:                    <div className="text-center mb-8">
+1564:                      <div className={`w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-4 ${
+1575:                    <div className="space-y-3">
+1577:                        <div key={res.platform} className={`p-4 rounded-2xl border flex items-center justify-between ${
+1580:                          <div className="flex items-center gap-3">
+1581:                            <div className={`p-2 rounded-lg ${
+1588:                            <div>
+1590:                              <div className="flex items-center gap-2">
+1606:                            <div className="max-w-[250px] text-right">
+1611:                            <div className="max-w-[250px] text-right">
+1634:                  <div className="p-8 space-y-6 overflow-y-auto flex-1">
+1636:                    <div className="flex border-b border-slate-100 mb-6 sticky top-0 bg-white z-10">
+1673:                      <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
+1674:                        <div className="p-4 bg-indigo-50 rounded-2xl border border-indigo-100">
+1680:                        <div className="space-y-2">
+1682:                          <div className="relative border-2 border-dashed border-slate-200 rounded-2xl p-8 text-center hover:border-indigo-400 transition-colors cursor-pointer group">
+1683:                            <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:bg-indigo-50 transition-colors">
+1711:                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+1712:                          <div className="space-y-2">
+1723:                          <div className="space-y-2">
+1725:                            <div className="flex gap-2">
+1748:                                    <div className={`p-3 border border-slate-200 rounded-xl hover:bg-slate-50 transition-all flex items-center justify-center cursor-pointer peer-checked:bg-indigo-50 peer-checked:border-indigo-500 peer-checked:text-indigo-600 ${platformStatus[p] === 'uploading' || platformStatus[p] === 'processing' ? 'animate-pulse border-indigo-500 bg-indigo-50' : ''} ${platformStatus[p] === 'success' ? 'border-emerald-500 bg-emerald-50 text-emerald-600' : ''} ${platformStatus[p] === 'error' ? 'border-red-500 bg-red-50 text-red-600' : ''}`}>
+1766:                        <div className="space-y-2">
+1780:                      <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
+1781:                        <div className="p-4 bg-slate-50 rounded-2xl border border-slate-100">
+1787:                        <div className="space-y-2">
+1798:                        <div className="grid grid-cols-2 gap-4">
+1799:                          <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100">
+1806:                              <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-all ${uploadOptions.tiktok.allow_comments ? 'left-7' : 'left-1'}`} />
+1809:                          <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100">
+1816:                              <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-all ${uploadOptions.tiktok.allow_duet ? 'left-7' : 'left-1'}`} />
+1819:                          <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100">
+1826:                              <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-all ${uploadOptions.tiktok.allow_stitch ? 'left-7' : 'left-1'}`} />
+1833:                      <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
+1834:                        <div className="space-y-2">
+1844:                        <div className="grid grid-cols-2 gap-6">
+1845:                          <div className="space-y-2">
+1857:                          <div className="space-y-2">
+1872:                        <div className="space-y-2">
+1882:                        <div className="space-y-2">
+1890:                        <div className="p-4 bg-indigo-50 rounded-2xl border border-indigo-100">
+1899:                      <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
+1901:                          <div className="p-4 bg-amber-50 rounded-2xl border border-amber-100 flex items-start gap-3">
+1903:                            <div className="space-y-1">
+1921:                          <div className="space-y-2">
+1937:                        <div className="space-y-2">
+1947:                        <div className="space-y-2">
+1950:                          <div className="space-y-2">
+1952:                            <div className="flex items-center gap-4">
+1953:                              <div className="relative w-24 h-24 bg-slate-100 rounded-xl border-2 border-dashed border-slate-200 flex items-center justify-center overflow-hidden group">
+1983:                              <div className="flex-1">
+2000:                          <div className="mt-2 space-y-2">
+2001:                            <div className="flex gap-2">
+2002:                              <div className="relative flex-1">
+2017:                                  <div className="absolute right-3 top-2.5">
+2033:                              <div className="flex flex-col space-y-2">
+2034:                                <div className="flex items-center justify-between p-3 bg-white rounded-xl border border-pink-100 shadow-sm animate-in fade-in slide-in-from-top-1">
+2035:                                  <div className="flex flex-col">
+2068:                        <div className="p-4 bg-pink-50 rounded-2xl border border-pink-100">
+2077:                      <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
+2079:                          <div className="space-y-2">
+2093:                        <div className="space-y-2">
+2105:                        <div className="space-y-2">
+2107:                          <div className="flex items-center gap-4">
+2108:                            <div className="relative w-24 h-24 bg-slate-100 rounded-xl border-2 border-dashed border-slate-200 flex items-center justify-center overflow-hidden group">
+2139:                            <div className="flex-1">
+2147:                        <div className="space-y-2">
+2163:                    <div className="bg-slate-50 rounded-2xl p-4 border border-slate-100">
+2165:                      <div className="space-y-3">
+2171:                              <div className="flex items-center justify-between">
+2172:                                <div className="flex items-center gap-2">
+2180:                              <div className="flex items-center justify-between">
+2181:                                <div className="flex items-center gap-2">
+2191:                              <div className="flex items-center justify-between">
+2192:                                <div className="flex items-center gap-2">
+2202:                              <div className="flex items-center justify-between">
+2203:                                <div className="flex items-center gap-2">
+2218:                  <div className="p-8 bg-white border-t border-slate-100 shrink-0">

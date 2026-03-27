@@ -5,7 +5,8 @@ export async function POST(req: NextRequest) {
     const formData = await req.formData();
     const video = formData.get('video') as File;
     const accessToken = formData.get('accessToken') as string;
-    const title = formData.get('title') as string;
+    const caption = formData.get('caption') as string;
+    const privacyLevel = formData.get('privacyLevel') as string || 'PUBLIC_TO_EVERYONE';
     const allowComments = formData.get('allowComments') === 'true';
     const allowDuet = formData.get('allowDuet') === 'true';
     const allowStitch = formData.get('allowStitch') === 'true';
@@ -25,8 +26,8 @@ export async function POST(req: NextRequest) {
       },
       body: JSON.stringify({
         post_info: {
-          title: title || '',
-          privacy_level: 'PUBLIC_TO_EVERYONE',
+          title: caption || '',
+          privacy_level: privacyLevel,
           disable_comment: !allowComments,
           disable_duet: !allowDuet,
           disable_stitch: !allowStitch,

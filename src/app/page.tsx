@@ -101,7 +101,7 @@ export default function Home() {
     youtube: { title: '', privacy: 'unlisted', tags: '', category: '22', thumbnail: null as File | null },
     instagram: { title: '', caption: '', instagramAccountId: '', thumbnail: null as File | null },
     facebook: { title: '', privacy: 'EVERYONE', pageId: '', thumbnail: null as File | null },
-    tiktok: { title: '', caption: '', privacy_level: 'PUBLIC_TO_EVERYONE', allow_comments: true }
+    tiktok: { title: '', caption: '', privacy_level: 'PUBLIC_TO_EVERYONE', allow_comments: true, allow_duet: true, allow_stitch: true }
   });
   const [accounts, setAccounts] = useState<SocialAccount[]>([]);
   const [history, setHistory] = useState<UploadResult[]>([]);
@@ -1800,24 +1800,35 @@ export default function Home() {
                             <span className="text-sm font-bold text-slate-700">Allow Comments</span>
                             <button 
                               type="button"
-                              onClick={() => setUploadOptions(prev => ({ ...prev, tiktok: { ...prev.tiktok, allowComments: !prev.tiktok.allowComments } }))}
-                              className={`w-12 h-6 rounded-full transition-all relative ${uploadOptions.tiktok.allowComments ? 'bg-indigo-600' : 'bg-slate-300'}`}
+                              onClick={() => setUploadOptions(prev => ({ ...prev, tiktok: { ...prev.tiktok, allow_comments: !prev.tiktok.allow_comments } }))}
+                              className={`w-12 h-6 rounded-full transition-all relative ${uploadOptions.tiktok.allow_comments ? 'bg-indigo-600' : 'bg-slate-300'}`}
                             >
-                              <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-all ${uploadOptions.tiktok.allowComments ? 'left-7' : 'left-1'}`} />
+                              <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-all ${uploadOptions.tiktok.allow_comments ? 'left-7' : 'left-1'}`} />
                             </button>
                           </div>
                           <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100">
                             <span className="text-sm font-bold text-slate-700">Allow Duet</span>
                             <button 
                               type="button"
-                              onClick={() => setUploadOptions(prev => ({ ...prev, tiktok: { ...prev.tiktok, allowDuet: !prev.tiktok.allowDuet } }))}
-                              className={`w-12 h-6 rounded-full transition-all relative ${uploadOptions.tiktok.allowDuet ? 'bg-indigo-600' : 'bg-slate-300'}`}
+                              onClick={() => setUploadOptions(prev => ({ ...prev, tiktok: { ...prev.tiktok, allow_duet: !prev.tiktok.allow_duet } }))}
+                              className={`w-12 h-6 rounded-full transition-all relative ${uploadOptions.tiktok.allow_duet ? 'bg-indigo-600' : 'bg-slate-300'}`}
                             >
-                              <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-all ${uploadOptions.tiktok.allowDuet ? 'left-7' : 'left-1'}`} />
+                              <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-all ${uploadOptions.tiktok.allow_duet ? 'left-7' : 'left-1'}`} />
+                            </button>
+                          </div>
+                          <div className="flex items-center justify-between p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <span className="text-sm font-bold text-slate-700">Allow Stitch</span>
+                            <button 
+                              type="button"
+                              onClick={() => setUploadOptions(prev => ({ ...prev, tiktok: { ...prev.tiktok, allow_stitch: !prev.tiktok.allow_stitch } }))}
+                              className={`w-12 h-6 rounded-full transition-all relative ${uploadOptions.tiktok.allow_stitch ? 'bg-indigo-600' : 'bg-slate-300'}`}
+                            >
+                              <div className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-all ${uploadOptions.tiktok.allow_stitch ? 'left-7' : 'left-1'}`} />
                             </button>
                           </div>
                         </div>
                       </div>
+                    )}
                     {activeUploadTab === 'youtube' && (
                       <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
                         <div className="space-y-2">

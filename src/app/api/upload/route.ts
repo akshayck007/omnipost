@@ -85,10 +85,11 @@ export async function POST(request: NextRequest) {
           const tiktokFormData = new FormData();
           tiktokFormData.append('video', video);
           tiktokFormData.append('accessToken', tokens.tiktok.access_token);
-          tiktokFormData.append('title', options.tiktok?.title || title);
-          tiktokFormData.append('allowComments', String(options.tiktok?.allowComments ?? true));
-          tiktokFormData.append('allowDuet', String(options.tiktok?.allowDuet ?? true));
-          tiktokFormData.append('allowStitch', String(options.tiktok?.allowStitch ?? true));
+          tiktokFormData.append('caption', options.tiktok?.caption || description || title);
+          tiktokFormData.append('privacyLevel', options.tiktok?.privacy_level || 'PUBLIC_TO_EVERYONE');
+          tiktokFormData.append('allowComments', String(options.tiktok?.allow_comments ?? true));
+          tiktokFormData.append('allowDuet', String(options.tiktok?.allow_duet ?? true));
+          tiktokFormData.append('allowStitch', String(options.tiktok?.allow_stitch ?? true));
 
           const tiktokResponse = await fetch(`${process.env.APP_URL}/api/upload/tiktok`, {
             method: 'POST',
