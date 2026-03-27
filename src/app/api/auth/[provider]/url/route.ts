@@ -30,6 +30,7 @@ export async function GET(
       "email",
       "instagram_basic",
       "instagram_content_publish",
+      "instagram_manage_insights",
       "pages_show_list",
       "pages_read_engagement",
       "pages_manage_posts",
@@ -37,7 +38,7 @@ export async function GET(
       "business_management"
     ].join(',');
     
-    const url = `https://www.facebook.com/v18.0/dialog/oauth?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${encodeURIComponent(scopes)}`;
+    const url = `https://www.facebook.com/v19.0/dialog/oauth?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${encodeURIComponent(scopes)}`;
     return NextResponse.json({ url });
   }
 

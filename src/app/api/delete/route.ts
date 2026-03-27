@@ -27,6 +27,9 @@ export async function POST(request: NextRequest) {
           // but we'll try the standard media delete endpoint.
           await deleteFromInstagram(res.id, tokens.meta.access_token);
           results.push({ platform: 'instagram', status: 'success' });
+        } else if (res.platform === 'tiktok') {
+          // TikTok API does not support media deletion for 3rd party apps
+          results.push({ platform: 'tiktok', status: 'error', message: 'TikTok platform limitation: Deleting videos via 3rd party apps is not supported by the TikTok API. Please delete this post directly from the TikTok app.' });
         }
       } catch (err: any) {
         console.error(`Delete failed for ${res.platform}:`, err);
@@ -59,7 +62,7 @@ async function deleteFromFacebook(id: string, accessToken: string) {
   // We need the page access token to delete. 
   // For simplicity, we'll try to find the page token again or use the user token if it has permissions.
   // Usually, the video ID itself can be deleted with the right token.
-  const response = await fetch(`https://graph.facebook.com/v18.0/${id}?access_token=${accessToken}`, {
+  const response = await fetch(`https://graph.facebook.com/v19.0/${id}?access_token=${accessToken}`, {
     method: 'DELETE',
   });
 
@@ -70,13 +73,23 @@ async function deleteFromFacebook(id: string, accessToken: string) {
 }
 
 async function deleteFromInstagram(id: string, accessToken: string) {
-  // Instagram media deletion is restricted for many app types.
-  const response = await fetch(`https://graph.facebook.com/v18.0/${id}?access_token=${accessToken}`, {
-    method: 'DELETE',
-  });
+  // Instagram Content Publishing API officially does NOT support media deletion via 3rd party apps.
+  // We attempt it as a courtesy, but it usually fails with (#10) Insufficient permissions.
+  try {
+    const response = await fetch(`https://graph.facebook.com/v19.0/${id}?access_token=${accessToken}`, {
+      method: 'DELETE',
+    });
 
-  const data = await response.json();
-  if (!response.ok || data.error) {
-    throw new Error(`Instagram Delete Failed: ${data.error?.message || 'Instagram API does not support deletion for this content type via 3rd party apps.'}`);
+    const data = await response.json();
+    if (!response.ok || data.error) {
+      const msg = data.error?.message || '';
+      if (msg.includes('permissions') || data.error?.code === 10 || data.error?.code === 200) {
+        throw new Error('Instagram platform limitation: Deleting Reels via 3rd party apps is not supported by the Instagram API. Please delete this post directly from the Instagram app.');
+      }
+      throw new Error(`Instagram Delete Failed: ${msg || 'Platform restriction'}`);
+    }
+  } catch (err: any) {
+    if (err.message.includes('Instagram platform limitation')) throw err;
+    throw new Error(`Instagram Delete Failed: ${err.message}`);
   }
 }

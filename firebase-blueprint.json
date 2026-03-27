@@ -15,7 +15,8 @@
           "properties": {
             "youtube": { "type": "object" },
             "instagram": { "type": "object" },
-            "facebook": { "type": "object" }
+            "facebook": { "type": "object" },
+            "tiktok": { "type": "object" }
           }
         },
         "createdAt": { "type": "string", "format": "date-time" }
